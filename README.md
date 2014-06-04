@@ -1,6 +1,6 @@
 # HttpErrors
 
-TODO: Write a gem description
+This is helpful gem for easily managing, raising and catching basic HTTP errors.
 
 ## Installation
 
@@ -37,7 +37,7 @@ Available errors `ErrorName(error_code, error_status)`:
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/http_errors/fork )
+1. Fork it (https://github.com/KamilLelonek/http_errors/fork)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
