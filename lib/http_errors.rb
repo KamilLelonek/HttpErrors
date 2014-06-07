@@ -7,6 +7,10 @@ module HttpErrors
       attr_accessor :status
       attr_accessor :head
     end
+
+    def initialize(message = nil)
+      super
+    end
   end
 
   # Unauthorized error raised when request comes from unknown source or user
@@ -27,7 +31,7 @@ module HttpErrors
     self.head   = :not_acceptable
   end
 
-  # NotAcceptable error raised when users provided not acceptable data
+  # NotFound error raised when requested data was not found in resources
   NotFound         = Class.new(HTTPError) do
     self.status = 404
     self.head   = :not_found
