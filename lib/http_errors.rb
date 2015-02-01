@@ -14,26 +14,32 @@ module HttpErrors
   end
 
   # Unauthorized error raised when request comes from unknown source or user
-  Unauthorized      = Class.new(HTTPError) do
+  Unauthorized = Class.new(HTTPError) do
     self.status = 401
     self.head   = :unauthorized
   end
 
   # Forbidden error raised when user doesn't have access to requested resources
-  Forbidden         = Class.new(HTTPError) do
+  Forbidden = Class.new(HTTPError) do
     self.status = 403
     self.head   = :forbidden
   end
 
-  # NotAcceptable error raised when users provided not acceptable data
-  NotAcceptable     = Class.new(HTTPError) do
+  # NotFound error raised when requested data was not found in resources
+  NotFound = Class.new(HTTPError) do
+    self.status = 404
+    self.head   = :not_found
+  end
+
+  # NotAcceptable error raised when client doesn't accept data format
+  NotAcceptable = Class.new(HTTPError) do
     self.status = 406
     self.head   = :not_acceptable
   end
 
-  # NotFound error raised when requested data was not found in resources
-  NotFound         = Class.new(HTTPError) do
-    self.status = 404
-    self.head   = :not_found
+  # UnprocessableEntity error raised when users provided invalid data
+  UnprocessableEntity = Class.new(HTTPError) do
+    self.status = 422
+    self.head   = :unprocessable_entity
   end
 end
